@@ -14,11 +14,11 @@
 
                 <div class="note-buttons">
 
-                    <a href="#" class="note-edit-button">
+                    <a href="{{ route('note.show', $note) }}" class="note-edit-button">
                         View
                     </a>
 
-                    <a href="#" class="note-edit-button">
+                    <a href="{{ route('note.edit', $note) }}" class="note-edit-button">
                         Edit
                     </a>
 
