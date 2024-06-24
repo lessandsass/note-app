@@ -8,5 +8,9 @@
 </head>
 <body>
 
+    <div>
+        {{ $slot }}
+    </div>
+
 </body>
 </html>
