@@ -42,11 +42,18 @@ class NoteController extends Controller
 
     public function update(Request $request, Note $note)
     {
-        //
+        $data = $request->validate([
+            'note' => ['required', 'min:15', 'max:5000', 'string'],
+        ]);
+
+        $note->update($data);
+        return to_route('note.show', $note)->with('message', 'Note was updated successfully');
     }
 
     public function destroy(Note $note)
     {
-        //
+        $note->delete();
+        return to_route('note.index')->with('message', 'Note was deleted successfully');
+
     }
 }
